@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>AI Generated Art</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="We trained our AI to create paintings." name="description">
+  <meta content="AI art, AI artist, ML art, fake art, computer art, computer generated art" name="keywords">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <script defer src="js/all.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @media screen and (max-width:767px) and (min-width:320px) {
+      center table {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table align="center" width="80%">
+    <td align="center">
+
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161314-54');
+      </script>
+
+      <div class="center_section">
+        <div class="text-center logo">
+          <a HREF="https://boredhumans.com"><img class="img-responsive" id="myimg" src="images/logo.jpg" height="90" width="354"></a>
+        </div>
+
+        <div id="content">
+
+          <center>
+            <font size="6"><b>AI Artist</b></font><br><br>
+            Our AI was trained on a collection of thousands of famous paintings to learn how to create new art like a real painter would. The paintings it makes do not already exist, they are computer generated art.
+          </center>
+
+        </div>
+
+        <form id="gen-form">
+
+
+          <input id="name1" type="hidden" value="a">
+
+        </form>
+      </div>
+
+    </td>
+  </table>
+  <br>
+
+  <table align="center">
+    <td width="75%" align="center">
+
+      <div class="buttons_lyric">
+
+        <span class="control">
+          <button type="submit" name="submit" id="generate-text" class="button is-link">
+            <span class="icon">
+              <i class="fas fa-md fa-pen"></i>
+            </span><span>Generate Another Painting!</span></button>
+        </span>
+
+      </div>
+
+      <div id="extra-buttons" class="buttons">
+        <span class="control">
+        </span>
+      </div>
+
+      <div id="model-output" class="column" align="center">
+
+
+        <img src="images/764.jpg" alt="764" height="768" width="768">
+
+
+
+        <p></p>
+
+      </div>
+    </td>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/jquery-3.4.1.min.js" crossorigin="anonymous">
+  </script>
+
+  <script type="text/javascript">
+    $(function() {
+      $('#gen-form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: "api_art.php",
+          type: 'POST',
+          data: {
+            'stories': true
+          },
+          cache: false,
+          dataType: "html",
+          contentType: "application/x-www-form-urlencoded",
+          beforeSend: function(data) {
+            $('#generate-text').addClass("is-loading");
+            $('#generate-text').prop("disabled", true);
+            var html = '';
+            title = '';
+
+          },
+
+          success: function(data) {
+            if (data) {
+              $('#generate-text').removeClass("is-loading");
+              $('#generate-text').prop("disabled", false);
+              $('#tutorial').remove();
+
+              $('#model-output').html("");
+
+              var html = '<div class=\"gen-box\">' + data + '</div><div class="gen-border"></div>';
+              $(html).appendTo('#model-output').hide().fadeIn("slow");
+            } else {
+              $('#generate-text').removeClass("is-loading");
+              $('#generate-text').prop("disabled", false);
+              $('#tutorial').remove();
+              var html = '<div class="gen-box warning">Please try again!</div><div class="gen-border"></div>';
+              $(html).appendTo('#model-output').hide().fadeIn("slow");
+            }
+
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            $('#generate-text').removeClass("is-loading");
+            $('#generate-text').prop("disabled", false);
+            $('#tutorial').remove();
+            var html = '<div class="gen-box warning">Please try again!</div><div class="gen-border"></div>';
+            $(html).appendTo('#model-output').hide().fadeIn("slow");
+          }
+        });
+      });
+    });
+
+
+
+  </script>
+
+  <br>
+  <table align="center" width="70%">
+    <td align="center">
+
+      <center>
+        <font size="3">These paintings are genreated using a GAN (Generative Adversarial Network), where two neural networks compete with each other in a game. One NN creates fake art and the other NN acts as a critic and tries to figure out which images are real and which aren't. Through this process, the art creating NN gets better and better over time at producing fakes.
+
+
+          <br><br>
+
+        </font>                   </center>
+
+
+    </td>
+  </table>
+
+  <br>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <table align="center">
+        <td width="70%" align="center">
+          <p>
+            Our AI Paintings were created using the following program: <a href="https://github.com/pbaylies/stylegan2" target="_blank"><strong>https://github.com/pbaylies/stylegan2</strong></a>.
+
+          </p>
+        </td>
+      </table>
+
+      <p></p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
