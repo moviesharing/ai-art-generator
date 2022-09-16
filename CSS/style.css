@@ -1,0 +1,231 @@
+<style>
+<style>html,
+body {
+  height: 95% !important;
+  margin: 0 !important;
+}
+
+footer {
+  /*max-height: 5% !important;*/
+  padding: 1em !important
+}
+
+section {
+  min-height: 95% !important
+}
+
+.gen-box {
+  background-color: #fff;
+  display: block;
+  padding: 0rem 1.25rem 1.25rem 1.25rem;
+  color: #4a4a4a;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.gen-border {
+  height: 0.25em;
+  background-color: #d5d5d5;
+}
+
+.gen-box.warning {
+  color: red;
+  font-weight: 700;
+
+}
+
+.brand-text {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em
+}
+
+#extra-buttons {
+  padding-top: 1em;
+  margin-top: 1em;
+  border-top: 0.5px solid #d5d5d5;
+}
+
+
+#custom-search-input {
+  margin: 0;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+#custom-search-input .search-query {
+  padding-right: 3px;
+  padding-right: 4px \9;
+  padding-left: 3px;
+  padding-left: 4px \9;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#custom-search-input button {
+  border: 0;
+  background: none;
+  /** belows styles are working good */
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -28px;
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #D9230F;
+}
+
+.search-query:focus+button {
+  z-index: 3;
+}
+
+
+.text-center {
+  margin-bottom: 1.8em;
+  margin-top: 1.6em;
+  text-align: center;
+}
+
+.top_section {
+  width: 60%;
+  margin: auto;
+  padding: 3% 0;
+}
+
+.center_section {
+  width: 60%;
+  margin: auto;
+  padding: 0% 0;
+}
+
+span.text {
+  color: #4495d4;
+}
+
+input.search-query.form-control {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+p.text-center.para {
+  color: #212529;
+  line-height: normal;
+  vertical-align: baseline;
+  font-size: 17px;
+  border: 1px solid #ced4da;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ffffff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(168, 168, 169, 0.25);
+}
+
+
+#custom-search-input {
+  margin: 0;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  padding: 0;
+  // box-shadow: 0 0 0.2rem 0.2rem rgba(168, 168, 169, 0.25);
+  width: 100%;
+}
+
+p.source {
+  text-align: justify;
+}
+
+#custom-search-input .search-query {
+  position: relative;
+  position: relative;
+  padding: 10px;
+  font-size: 15px;
+  /*width: 85.6%;*/
+  width: 85%;
+  max-width: 85%;
+
+}
+
+.logo img.img-responsive {
+  width: 97%;
+  max-width: 354px;
+}
+
+span.search_ico {
+  position: absolute;
+  right: 20px;
+  top: 1px;
+}
+
+.search_form {
+  width: 100%;
+  border: 5px solid #0e9948;
+}
+
+.search_ico input[type="submit"] {
+  padding: 8px 28px;
+  background-color: #0e9948;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#mysearch {
+  border-color: #0e9948;
+  //border: 1px solid;
+  padding: 10px 10px;
+  background-color: #E0FFFF;
+  //background-color: #F0F8FF;
+  visibility: hidden;
+
+}
+
+div#model-output b {
+  text-transform: capitalize;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .search_ico input[type="submit"] {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  div#model-output {
+    width: 100%;
+  }
+
+  .center_section {
+    width: 90%;
+  }
+}
+
+.buttons:not(:last-child),.column {
+  margin-bottom: 0rem;
+
+}
+</style>
